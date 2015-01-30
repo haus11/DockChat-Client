@@ -8,7 +8,7 @@
  * # connectionService
  * Service in the assetsApp.
  */
-io.sails.autoConnect = false;
+io.sails.autoConnect  = false;
 
 angular.module('webchatApp')
   .service('connectionService', function ($rootScope) {
@@ -17,7 +17,7 @@ angular.module('webchatApp')
     // sails.io object. As an angular service will be instantiated only once, we can
     // connect to the server here.
     // -----------------------------------------------------------------------------
-    io.sails.autoConnect = false;
+    //io.sails.autoConnect = false;
     io.sails.url = 'http://haus11.org:1337';
 
     var socket = io.sails.connect();

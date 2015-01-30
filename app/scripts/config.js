@@ -3,8 +3,8 @@
  */
 var config = {
   api : {
-    messageCreate : 'message:create',
-    messageGet    : '/message',
-    messageSend   : '/message'
+    messageCreate : 'message',
+    messageGet    : '/messages',
+    messageSend   : '/messages'
   }
 };

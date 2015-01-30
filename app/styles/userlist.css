@@ -1,0 +1,7 @@
+.user-list-entry {
+  margin: 2px 0;
+}
+
+.user-list-entry .user-entry-name {
+  font-weight: bold;
+}
