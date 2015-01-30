@@ -9,7 +9,7 @@
  * Service in the assetsApp.
  */
 io.sails.autoConnect = false;
-io.sails.url = 'http://192.168.1.83:1337';
+
 angular.module('webchatApp')
   .service('connectionService', function ($rootScope) {
     // -----------------------------------------------------------------------------
@@ -18,7 +18,7 @@ angular.module('webchatApp')
     // connect to the server here.
     // -----------------------------------------------------------------------------
     io.sails.autoConnect = false;
-    io.sails.url = 'http://192.168.1.83:1337';
+    io.sails.url = 'http://haus11.org:1337';
 
     var socket = io.sails.connect();
 
