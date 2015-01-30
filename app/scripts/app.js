@@ -18,7 +18,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'angular.filter',
-    'luegg.directives'
+    'luegg.directives',
+    'emoji'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({

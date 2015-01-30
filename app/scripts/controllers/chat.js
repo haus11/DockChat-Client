@@ -19,17 +19,17 @@ angular.module('webchatApp')
     };
 
     $scope.chatMessages = [
-      {
-        id        : 0,
-        user      : {
-          id       : 0,
-          username : 'Peter'
-        },
-        text      : 'Lutsch mir meinen Schwanz!',
-        from      : 'LuckyLuke',
-        to        : null,
-        createdAt : '13:23'
-      }
+      //{
+      //  id        : 0,
+      //  user      : {
+      //    id       : 0,
+      //    username : 'Peter'
+      //  },
+      //  text      : 'How is it going man? www.google.de :dog:',
+      //  from      : 'LuckyLuke',
+      //  to        : null,
+      //  createdAt : '13:23'
+      //}
     ];
 
     // #################################################################################################################
