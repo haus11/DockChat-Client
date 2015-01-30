@@ -314,12 +314,19 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
+          src: [
+            'generated/*'
+          ]
         }, {
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
+        }, {
+          expand: true,
+          cwd: 'bower_components/angular-emoji-filter/dist',
+          src: 'emoji.png',
+          dest: '<%= yeoman.dist %>/images'
         }]
       },
       styles: {
@@ -351,28 +358,8 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
-    },
-
-    // emoticons
-    montage: {
-      "21x21": {
-        // ...
-        options: {
-          size: 21,                         // Width/height of each icon
-          prefix: ".emoji",                 // Base CSS selector
-          outputImage: "emoji.png",         // File name of sprite sheet
-          outputStylesheet: "emoji.css",    // File name of stylesheet
-          baseRules: {                      // CSS properties added to the base rule
-            "text-indent": "-9999px",
-            display: "inline-block"
-          },
-          magick: {                         // ImageMagick options
-            background: "none",
-            depth: 7
-          }
-        }
-      }
     }
+
   });
 
 
