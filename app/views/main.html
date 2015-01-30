@@ -1,0 +1,18 @@
+
+<div class="chat-container">
+  <div class="chat-history" scroll-glue>
+    <div ng-repeat="message in chatMessages" class="chat-message">
+      <span class="message-user">{{message.from}}</span> (<span class="message-time">{{message.createdAt}}</span>) : <span class="message-text">{{message.text}}</span>
+    </div>
+  </div>
+  <div class="chat-input">
+    <form name="chatInputForm">
+      <input type="text" class="form-control input-sm input-message" name="uMessage" ng-model="chatInput.message" required/>
+      <input type="submit" class="btn btn-success btn-send" ng-click="sendMessage()" ng-disabled="chatInputForm.$invalid" value="Send"/>
+    </form>
+  </div>
+</div>
+
+<div class="user-list-container">
+
+</div>
