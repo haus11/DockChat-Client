@@ -14,11 +14,25 @@ angular.module('webchatApp')
     //                                                      Base
     // #################################################################################################################
 
-    $scope.chatInput = {
-      message: ''
-    };
+    $scope.userList = [
+      {
+        username : 'Peter',
+        alias    : 'LuckyMan'
+      },
+      {
+        username : 'Peter',
+        alias    : 'Peter Pan'
+      },
+      {
+        username : 'Peter',
+        alias    : 'Chuckle Brother'
+      },
+      {
+        username : 'Peter',
+        alias    : 'Boom Bob'
+      }
 
-    $scope.userList = [];
+    ];
 
 
     // #################################################################################################################
@@ -30,16 +44,6 @@ angular.module('webchatApp')
     //                                                   Functions
     // #################################################################################################################
 
-    $scope.sendMessage = function () {
-      var message = {
-        text : $scope.chatInput.message
-      };
 
-      connectionService.post(config.api.messageSend, message, function (_data, _jwres) {
-        console.log(_data);
-      });
-
-      $scope.chatInput.message = '';
-    };
 
   });
