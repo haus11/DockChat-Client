@@ -1,0 +1,39 @@
+.chat-history {
+  width: 100%;
+  /*                input height */
+  height: calc(100% - 50px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px 20px 10px 20px;
+}
+
+.chat-input {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-top: solid #898989 1px;
+}
+
+.chat-input .input-message {
+  float: left;
+  height: 100%;
+  /*                button width - left button margin*/
+  width: calc(100% - 60px - 15px);
+}
+
+.chat-input .btn-send {
+  float: right;
+  width: 60px;
+}
+
+.chat-message {
+  margin: 2px 0;
+}
+
+.chat-message .message-user {
+  font-weight: bold;
+}
+
+.chat-message .message-time {
+  font-style: italic;
+}
