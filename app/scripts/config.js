@@ -3,8 +3,13 @@
  */
 var config = {
   api : {
+    connect       : '/connect',
     messageCreate : 'message',
     messageGet    : '/messages',
     messageSend   : '/messages'
+  },
+  // broadcast values
+  bc : {
+    onStartFinished : 'onStartFinished'
   }
 };

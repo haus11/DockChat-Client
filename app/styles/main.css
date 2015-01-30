@@ -10,7 +10,7 @@ body, html {
 }
 
 .user-list-container {
-  width: 25%;
+  width: 20%;
   height : 100%;
   float: right;
   overflow: scroll;
@@ -19,7 +19,7 @@ body, html {
 }
 
 .chat-container {
-  width: 75%;
+  width: 80%;
   height: 100%;
   float: left;
 }

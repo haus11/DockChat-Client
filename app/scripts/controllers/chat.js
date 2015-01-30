@@ -8,7 +8,7 @@
  * Controller of the webchatApp
  */
 angular.module('webchatApp')
-  .controller('ChatCtrl', function ($scope, userService, connectionService) {
+  .controller('ChatCtrl', function ($scope, $rootScope, userService, connectionService) {
 
     // #################################################################################################################
     //                                                      Base
@@ -36,9 +36,12 @@ angular.module('webchatApp')
     //                                                Socket callbacks
     // #################################################################################################################
 
-    connectionService.get(config.api.messageGet, null, function (_data, _jwres) {
-      console.log(_data);
-      $scope.chatMessages = $scope.chatMessages.concat(_data);
+      connectionService.get(config.api.messageGet, null, function (_data, _jwres) {
+        console.log('Fetching last messages: ' + _data.length);
+        // Get last messaged and add them
+        $scope.chatMessages = $scope.chatMessages.concat(_data);
+      });
+    $rootScope.$on(config.bc.onStartFinished, function () {
     });
 
     connectionService.on(config.api.messageCreate, function (_message) {
@@ -47,15 +50,15 @@ angular.module('webchatApp')
       // New message appears
       $scope.chatMessages.push(
         {
-          id        : 0,
+          id        : _message.data.id,
           user      : {
             id       : 0,
-            username : 'Peter'
+            username : userService.getUserName()
           },
           text      : _message.data.text,
-          from      : 'LuckyLuke',
+          from      : userService.getAlias(),
           to        : null,
-          createdAt : '13:23'
+          createdAt : _message.data.createdAt
         })
     });
 
