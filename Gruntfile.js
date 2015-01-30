@@ -351,6 +351,27 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    // emoticons
+    montage: {
+      "21x21": {
+        // ...
+        options: {
+          size: 21,                         // Width/height of each icon
+          prefix: ".emoji",                 // Base CSS selector
+          outputImage: "emoji.png",         // File name of sprite sheet
+          outputStylesheet: "emoji.css",    // File name of stylesheet
+          baseRules: {                      // CSS properties added to the base rule
+            "text-indent": "-9999px",
+            display: "inline-block"
+          },
+          magick: {                         // ImageMagick options
+            background: "none",
+            depth: 7
+          }
+        }
+      }
     }
   });
 
