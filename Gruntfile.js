@@ -326,7 +326,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'bower_components/angular-emoji-filter/dist',
           src: 'emoji.png',
-          dest: '<%= yeoman.dist %>/images'
+          dest: '<%= yeoman.dist %>/styles'
         }]
       },
       styles: {
