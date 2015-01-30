@@ -38,6 +38,7 @@ angular.module('webchatApp')
 
     connectionService.get(config.api.messageGet, null, function (_data, _jwres) {
       console.log(_data);
+      $scope.chatMessages = $scope.chatMessages.concat(_data);
     });
 
     connectionService.on(config.api.messageCreate, function (_message) {
