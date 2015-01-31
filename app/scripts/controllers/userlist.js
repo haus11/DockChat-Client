@@ -14,31 +14,26 @@ angular.module('webchatApp')
     //                                                      Base
     // #################################################################################################################
 
-    $scope.userList = [
-      {
-        username : 'Peter',
-        alias    : 'LuckyMan'
-      },
-      {
-        username : 'Peter',
-        alias    : 'Peter Pan'
-      },
-      {
-        username : 'Peter',
-        alias    : 'Chuckle Brother'
-      },
-      {
-        username : 'Peter',
-        alias    : 'Boom Bob'
-      }
-
-    ];
-
+    $scope.userList = [];
 
     // #################################################################################################################
     //                                                Socket callbacks
     // #################################################################################################################
 
+    connectionService.get(config.api.user, function (_data, _jwres) {
+      console.log(_data);
+      $scope.userList = $scope.userList.concat(_data);
+    });
+
+    connectionService.on(config.api.user_connect, function (_data) {
+      console.log(_data);
+      $scope.userList.push(_data);
+    });
+
+    connectionService.on(config.api.user_disconnect, function (_data) {
+      console.log(_data);
+
+    });
 
     // #################################################################################################################
     //                                                   Functions

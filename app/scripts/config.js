@@ -3,11 +3,11 @@
  */
 var config = {
   api : {
-    user_create     : '/user',
+    user            : '/user',
     user_connect    : 'user:create',
     user_disconnect : 'user:disconnect',
     authenticate    : '/user/authenticate',
-    connect         : '/connect',
+    connect         : 'connect',
     messageCreate   : 'message:create',
     messageGet      : '/messages',
     messageSend     : '/messages'

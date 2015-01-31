@@ -19,7 +19,7 @@ angular.module('webchatApp')
         username : $scope.newUserInput.username
       };
 
-      connectionService.post(config.api.user_create, user, function (_data, _jwres) {
+      connectionService.post(config.api.user, user, function (_data, _jwres) {
         console.log(_data);
 
         userService.setAlias(_data.username);

@@ -39,7 +39,6 @@ angular.module('webchatApp')
     // get last messages
     connectionService.get(config.api.messageGet, null, function (_data, _jwres) {
       // Get last messaged and add them
-      console.log(_data);
       $scope.chatMessages = $scope.chatMessages.concat(_data.reverse());
     });
 

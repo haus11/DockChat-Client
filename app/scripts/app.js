@@ -49,7 +49,7 @@ angular
   })
   .run(function ($rootScope, $location, userService, connectionService) {
 
-    connectionService.on('connect', function () {
+    connectionService.on(config.api.connect, function () {
       connectionService.post(config.api.authenticate, function (_data, _jwres) {
         console.log(_data);
 
