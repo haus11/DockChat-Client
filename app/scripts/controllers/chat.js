@@ -18,19 +18,7 @@ angular.module('webchatApp')
       message: ''
     };
 
-    $scope.chatMessages = [
-      //{
-      //  id        : 0,
-      //  user      : {
-      //    id       : 0,
-      //    username : 'Peter'
-      //  },
-      //  text      : 'How is it going man? www.google.de :dog:',
-      //  from      : 'LuckyLuke',
-      //  to        : null,
-      //  createdAt : '13:23'
-      //}
-    ];
+    $scope.chatMessages = [];
 
     // #################################################################################################################
     //                                                Socket callbacks

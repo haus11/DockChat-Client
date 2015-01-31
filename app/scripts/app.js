@@ -50,6 +50,11 @@ angular
   .run(function ($rootScope, $location, userService, connectionService) {
 
     console.log('Run');
+
+    connectionService.on('reconnect', function() {
+        console.log('reconnect socket');
+    });
+
     connectionService.on(config.api.connect, function () {
       console.log('Connect');
       connectionService.post(config.api.authenticate, function (_data, _jwres) {

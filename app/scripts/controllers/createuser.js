@@ -11,10 +11,13 @@ angular.module('webchatApp')
   .controller('CreateuserCtrl', function ($scope, $location, connectionService, userService) {
 
     $scope.newUserInput = {
-      username : ''
+      username        : '',
+      buttonDisabled  : false
     };
 
     $scope.createUser = function () {
+      $scope.newUserInput.buttonDisabled = true;
+
       var user = {
         username : $scope.newUserInput.username
       };
