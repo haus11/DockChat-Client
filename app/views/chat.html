@@ -1,6 +1,6 @@
 <div class="chat-history" scroll-glue>
   <div ng-repeat="message in chatMessages" class="chat-message">
-    <span class="message-user {{message.from.isServer ? 'serverbot' : ''}}">{{message.from.username | usernameFilter}}</span> (<span class="message-time">{{message.createdAt | date:'short':'CET'}}</span>) : <span class="message-text" ng-bind-html="message.text | linky:'_blank' | emoji"></span>
+    <span class="message-user {{message.from.isServer ? 'serverbot' : ''}}">{{message.from.username | usernameFilter}}</span> (<span class="message-time">{{message.createdAt | date:'dd.MM.yyyy hh:mm a'}}</span>) : <span class="message-text" ng-bind-html="message.text | linky:'_blank' | emoji"></span>
   </div>
 </div>
 <div class="chat-input">
