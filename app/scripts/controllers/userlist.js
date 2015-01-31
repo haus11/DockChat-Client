@@ -21,18 +21,23 @@ angular.module('webchatApp')
     // #################################################################################################################
 
     connectionService.get(config.api.user, function (_data, _jwres) {
-      console.log(_data);
+      console.log('getUser');
       $scope.userList = $scope.userList.concat(_data);
     });
 
-    connectionService.on(config.api.user_connect, function (_data) {
-      console.log(_data);
+    connectionService.on(config.api.user_create, function (_data) {
+      console.log('UserCreate');
+      $scope.userList.push(_data);
+    });
+
+    connectionService.on(config.api.user_reconnect, function (_data) {
+      console.log('UserReconnect');
       $scope.userList.push(_data);
     });
 
     connectionService.on(config.api.user_disconnect, function (_data) {
-      console.log(_data);
-
+      console.log('UserDisconnect');
+      $scope.userList.splice($scope.userList.indexOf(_data), 1);
     });
 
     // #################################################################################################################

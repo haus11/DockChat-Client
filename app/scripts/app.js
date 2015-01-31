@@ -49,8 +49,11 @@ angular
   })
   .run(function ($rootScope, $location, userService, connectionService) {
 
+    console.log('Run');
     connectionService.on(config.api.connect, function () {
+      console.log('Connect');
       connectionService.post(config.api.authenticate, function (_data, _jwres) {
+        console.log('Authenticate');
         console.log(_data);
 
         if (Object.keys(_data).length === 0) {
@@ -70,7 +73,4 @@ angular
       });
     });
 
-    //$rootScope.$on('$routeChangeStart', function(_event, _newUrl, _oldUrl) {
-    //  console.log(_newUrl);
-    //});
   });

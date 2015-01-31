@@ -4,7 +4,8 @@
 var config = {
   api : {
     user            : '/user',
-    user_connect    : 'user:create',
+    user_create     : 'user:create',
+    user_reconnect  : 'user:reconnect',
     user_disconnect : 'user:disconnect',
     authenticate    : '/user/authenticate',
     connect         : 'connect',
