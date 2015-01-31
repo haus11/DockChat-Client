@@ -22,10 +22,11 @@ angular
     'emoji'
   ])
   .config(function ($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
-    });
+    //
+    //$locationProvider.html5Mode({
+    //  enabled: true,
+    //  requireBase: false
+    //});
 
     $routeProvider
       .when('/', {
@@ -43,4 +44,33 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+
+  })
+  .run(function ($rootScope, $location, userService, connectionService) {
+
+    connectionService.on('connect', function () {
+      connectionService.post(config.api.authenticate, function (_data, _jwres) {
+        console.log(_data);
+
+        if (Object.keys(_data).length === 0) {
+          // ask for name
+          // create user on /user POST
+          $location.path('/createUser');
+        }
+        else {
+          // get data from session
+          userService.setAlias(_data.username);
+          userService.setUserName(_data.username);
+
+          $location.path('/chatRoom');
+        }
+
+        $rootScope.$apply();
+      });
+    });
+
+    //$rootScope.$on('$routeChangeStart', function(_event, _newUrl, _oldUrl) {
+    //  console.log(_newUrl);
+    //});
   });

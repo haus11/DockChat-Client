@@ -39,7 +39,8 @@ angular.module('webchatApp')
     // get last messages
     connectionService.get(config.api.messageGet, null, function (_data, _jwres) {
       // Get last messaged and add them
-      $scope.chatMessages = $scope.chatMessages.concat(_data);
+      console.log(_data);
+      $scope.chatMessages = $scope.chatMessages.concat(_data.reverse());
     });
 
     // register callback when a new message arrives
@@ -47,20 +48,8 @@ angular.module('webchatApp')
       console.log(_message);
 
       // New message appears
-      $scope.chatMessages.push(
-        {
-          id        : _message.id,
-          user      : {
-            id       : 0,
-            username : userService.getUserName()
-          },
-          text      : _message.text,
-          from      : userService.getAlias(),
-          to        : null,
-          createdAt : _message.createdAt
-        });
+      $scope.chatMessages.push(_message);
 
-      console.log($scope.chatMessages);
     });
 
     // #################################################################################################################
