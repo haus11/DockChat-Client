@@ -38,6 +38,18 @@ angular.module('webchatApp')
       console.log(_data);
       $scope.userList.push(_data);
     });
+    
+    connectionService.on('user:update', function (_data) {
+      console.log('UserUpdate');
+      console.log(_data);
+        for (var i = 0; i < $scope.userList.length; i++) {
+           if ($scope.userList[i].id == _data.id) {
+               console.log('test');
+                $scope.userList[i] = _data;
+             break;
+           }
+         }
+    });
 
     connectionService.on(config.api.user_disconnect, function (_data) {
       console.log('UserDisconnect');

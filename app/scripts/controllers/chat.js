@@ -49,7 +49,10 @@ angular.module('webchatApp')
       };
 
       connectionService.post(config.api.messageSend, message, function (_data, _jwres) {
-
+          
+          if(_data.command) {
+              console.log(_data.message);
+          }
       });
 
       $scope.chatInput.message = '';
