@@ -18,7 +18,7 @@ angular.module('webchatApp')
     // connect to the server here.
     // -----------------------------------------------------------------------------
     //io.sails.autoConnect = false;
-    io.sails.url = 'http://haus11.org:1337';
+    io.sails.url = 'http://localhost:1337';
 
     var socket = io.sails.connect();
 
