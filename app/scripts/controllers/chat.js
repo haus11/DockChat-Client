@@ -36,11 +36,13 @@ angular.module('webchatApp')
     //                                                Socket callbacks
     // #################################################################################################################
 
+
+    $rootScope.$on(config.bc.onStartFinished, function () {
+      console.log('Finished');
       connectionService.get(config.api.messageGet, null, function (_data, _jwres) {
         // Get last messaged and add them
         $scope.chatMessages = $scope.chatMessages.concat(_data);
       });
-    $rootScope.$on(config.bc.onStartFinished, function () {
     });
 
     connectionService.on(config.api.messageCreate, function (_message) {

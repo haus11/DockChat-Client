@@ -3,10 +3,14 @@
  */
 var config = {
   api : {
-    connect       : '/connect',
-    messageCreate : 'message',
-    messageGet    : '/messages',
-    messageSend   : '/messages'
+    user_create     : '/user',
+    user_connect    : 'user:create',
+    user_disconnect : 'user:disconnect',
+    authenticate    : '/user/authenticate',
+    connect         : '/connect',
+    messageCreate   : 'message:create',
+    messageGet      : '/messages',
+    messageSend     : '/messages'
   },
   // broadcast values
   bc : {
