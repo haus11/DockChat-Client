@@ -21,7 +21,8 @@ angular.module('webchatApp')
 
       connectionService.post(config.api.user_create, user, function (_data, _jwres) {
         console.log(_data);
-        $location.path('/');
+
+        // $location.path('/chatRoom');
       });
     };
 

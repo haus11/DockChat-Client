@@ -12,6 +12,7 @@ angular.module('webchatApp')
 
     connectionService.post(config.api.authenticate, function (_data, _jwres) {
       console.log(_data);
+
       if (Object.keys(_data).length === 0) {
         // ask for name
         // create user on /user POST
@@ -19,14 +20,14 @@ angular.module('webchatApp')
       }
       else {
         // get data from session
+
+
+        $location.path('/chatRoom');
       }
 
       userService.setAlias('PartyMan');
       userService.setUserName('PartyMan');
 
-      // TODO: Can be buggy if it is loaded to quickly before the other controllers are done with loading (No broadcast
-      // will be received in listener controllers
-      $rootScope.$broadcast(config.bc.onStartFinished);
     });
 
   });

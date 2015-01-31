@@ -36,6 +36,10 @@ angular
         templateUrl: 'views/createuser.html',
         controller: 'CreateuserCtrl'
       })
+      .when('/chatRoom', {
+        templateUrl: 'views/chatroom.html',
+        controller: 'ChatroomCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
