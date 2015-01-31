@@ -24,7 +24,7 @@ angular.module('webchatApp')
     connectionService.get(config.api.user, function (_data, _jwres) {
       console.log('getUser');
       console.log(_data);
-      $scope.userList = $scope.userList.concat(_data);
+      $scope.userList = _data;
     });
 
     connectionService.on(config.api.user_create, function (_data) {
@@ -38,7 +38,7 @@ angular.module('webchatApp')
       console.log(_data);
       $scope.userList.push(_data);
     });
-    
+
     connectionService.on('user:update', function (_data) {
       console.log('UserUpdate');
       console.log(_data);
