@@ -49,16 +49,18 @@ angular.module('webchatApp')
       // New message appears
       $scope.chatMessages.push(
         {
-          id        : _message.data.id,
+          id        : _message.id,
           user      : {
             id       : 0,
             username : userService.getUserName()
           },
-          text      : _message.data.text,
+          text      : _message.text,
           from      : userService.getAlias(),
           to        : null,
-          createdAt : _message.data.createdAt
-        })
+          createdAt : _message.createdAt
+        });
+
+      console.log($scope.chatMessages);
     });
 
     // #################################################################################################################
@@ -71,7 +73,7 @@ angular.module('webchatApp')
       };
 
       connectionService.post(config.api.messageSend, message, function (_data, _jwres) {
-        console.log(_data);
+
       });
 
       $scope.chatInput.message = '';

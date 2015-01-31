@@ -22,7 +22,10 @@ angular.module('webchatApp')
       connectionService.post(config.api.user_create, user, function (_data, _jwres) {
         console.log(_data);
 
-        // $location.path('/chatRoom');
+        userService.setAlias(_data.username);
+        userService.setUserName(_data.username);
+
+        $location.path('/chatRoom');
       });
     };
 

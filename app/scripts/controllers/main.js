@@ -25,6 +25,7 @@ angular.module('webchatApp')
         $location.path('/chatRoom');
       }
 
+      $rootScope.$apply();
       userService.setAlias('PartyMan');
       userService.setUserName('PartyMan');
 
