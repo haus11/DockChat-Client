@@ -37,3 +37,7 @@
 .chat-message .message-time {
   font-style: italic;
 }
+
+.serverbot {
+    color: blue;
+}
