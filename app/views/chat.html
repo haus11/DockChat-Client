@@ -4,8 +4,8 @@
   </div>
 </div>
 <div class="chat-input">
-  <form name="chatInputForm">
-    <input type="text" class="form-control input-sm input-message" name="uMessage" ng-model="chatInput.message" required/>
-    <input type="submit" class="btn btn-success btn-send" ng-click="sendMessage()" ng-disabled="chatInputForm.$invalid" value="Send"/>
+  <form name="chatInputForm" ng-submit="sendMessage();">
+    <input type="text" class="form-control input-sm input-message" name="uMessage" ng-model="chatInput.message" required command-history/>
+    <input type="submit" class="btn btn-success btn-send" ng-disabled="chatInputForm.$invalid" value="Send"/>
   </form>
 </div>

@@ -44,18 +44,20 @@ angular.module('webchatApp')
     // #################################################################################################################
 
     $scope.sendMessage = function () {
-      var message = {
-        text : $scope.chatInput.message
-      };
+      if ($scope.chatInput.message != '') {
+        var message = {
+          text: $scope.chatInput.message
+        };
 
-      connectionService.post(config.api.messageSend, message, function (_data, _jwres) {
-          
-          if(_data.command) {
-              console.log(_data.message);
+        connectionService.post(config.api.messageSend, message, function (_data, _jwres) {
+
+          if (_data.command) {
+            console.log(_data.message);
           }
-      });
+        });
 
-      $scope.chatInput.message = '';
+        $scope.chatInput.message = '';
+      }
     };
 
   });

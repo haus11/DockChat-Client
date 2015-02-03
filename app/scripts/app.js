@@ -22,7 +22,7 @@ angular
     'emoji'
   ])
   .config(function ($routeProvider, $locationProvider) {
-    //
+
     //$locationProvider.html5Mode({
     //  enabled: true,
     //  requireBase: false
@@ -44,7 +44,6 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-
 
   })
   .run(function ($rootScope, $location, userService, connectionService) {
