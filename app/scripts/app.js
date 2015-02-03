@@ -19,7 +19,8 @@ angular
     'ngTouch',
     'angular.filter',
     'luegg.directives',
-    'emoji'
+    'emoji',
+    'angular.chronicle'
   ])
   .config(function ($routeProvider, $locationProvider) {
 
